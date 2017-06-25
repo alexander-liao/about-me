@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>English Presentation | Client</title>
+    <link href="stylesheet.css?version=2" rel="stylesheet">
+    <link href="animations.css?version=2" rel="stylesheet">
+    <script src="jquery.js"></script>
+  </head>
+
+  <body style='background-color: black; color: white'>
+    <div id='wait'><center><h1>Please Wait :)</h1></center></div>
+    <div id='welcome' hidden><center><h1>Welcome to Alex's English Presentation</h1><h3>Economy of the 1930s</h3></center></div>
+    <nav id='top-slider' class='slider slide-down inactive'></nav>
+    <nav id='top-content' class='fullslider slide-down fullinactive'></nav>
+
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB3BMWmAPtRsxzMzBPT94sngVb6R8uYGlc",
+        authDomain: "hyper-neutrino.firebaseapp.com",
+        databaseURL: "https://hyper-neutrino.firebaseio.com",
+        projectId: "hyper-neutrino",
+        storageBucket: "hyper-neutrino.appspot.com",
+        messagingSenderId: "645211605426"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+      var user;
+
+      firebase.auth().onAuthStateChanged(function(USER) {
+        user = USER;
+      });
+
+      var TITLE = '';
+
+      var hideTitle = function(title) {
+        $('#top-slider').removeClass('active').addClass('inactive');
+      }
+
+      var showTitle = function(title) {
+        return function() {
+          if (title) {
+            document.getElementById('top-slider').innerHTML = '<h1 style="font-size: 300%"><center>' + (TITLE = title) + '</center></h1>';
+          };
+          $('#top-slider').removeClass('inactive').addClass('active');
+        }
+      }
+
+      var hideContent = function(text) {
+        $('#top-content').removeClass('active').addClass('fullinactive');
+      }
+
+      var showContent = function(text) {
+        return function() {
+          if (text) {
+            document.getElementById('top-content').innerHTML = '<h1 style="font-size: 300%">' + TITLE + '</h1><br /><div style="margin-left: 20px; margin-bottom: 20px" id="a">' + text + '</div>';
+          }
+          $('#top-content').removeClass('fullinactive').addClass('active');
+        }
+      }
+
+      functions = [
+        function() {$('body').addClass('stage1');},
+        function() {$('#wait').hide(); $('#welcome').show(); $('body').addClass('stage2');},
+        function() {$('#welcome').slideUp();},
+        showTitle('Economy right before the 1930s'),
+        showContent('The economy right before the 1930s was in an all-time high with true and consistent prosperity, amazing advancements in technology, and a very rich culture. The 1920s was a time of mass-production and mass-consumption as well, delivering high profits to investors and increasing the living standards of the middle- and working-class. However, for the American population generating their profits from agriculture, the decade was marked with the agony of prolonged depression.<br /><br />The 1920s actually began with a very quiet start as the transition back to peace after World War I was a difficult adjustment for the people and the economy of America. Labor unions, which were strengthened during the war, fought to maintain their power through a series of strikes in the late 1910s, affecting hundreds of thousand of workers across local regions. Employers held firm against workers\ demands, and most large strikes collapsed quickly after workers returned to working under the threat of violence. The difficulties of the transition from the war induced a short period of the time where the economy briefly but sharply regressed, with unemployment briefly exceeding 11%. However, thanks to Commerce Secretary and future president Herbert Hoover\'s success in convincing major leaders of industry to voluntarily increase wages to pull the economy out of the stall, the recession was quickly ceased. By 1922, the economy was thriving and continuing to grow and would remain that way until the Great Crash of 1929.'),
+        hideContent, hideTitle,
+        showTitle('Life in the 1920s'),
+        showContent('<h2>A Great Time to be Rich</h2>The 1920s was indeed an excellent time to be part of the upper-class; Treasury Secretary Andrew Mellon, a very successful investment banker, lowered the top marginal income tax rate for the upper-class from 73% to just 25%, which let investors enjoy some of the greatest benefits in American history. The explosion in mass-production industries was powered by the widespread distribution of new technologies and with the assembly line providing opportunities for protifts from investment, the stock market reached an all-time maximum ascent; the Dow Jones Industrial Average peaked at over six times the 1921 high in 1929. Because the stocks were only owned by very high upper-class people, stock market returns only directly benefitted the richest. Consequently, the richest population in America was becoming even richer, perhaps to the maximum ever in American history. (Accurate demographics did not exist for before the First World War, so the word "perhaps" is used to indicate that there is a level of uncertainty with this statement.) Thus, the wealth distribution was becoming more and more skewed.'),
+        hideContent,
+        showContent('This image is from 2007, but the wealth distribution would have looked something like this, perhaps more extremely unbalanced; wealth distribution always tends to look something like this.<br /><br /><img height="350" src="https://upload.wikimedia.org/wikipedia/commons/a/af/U.S._Distribution_of_Wealth%2C_2007.jpg" />'),
+        hideContent,
+        showContent('<h2>A Good Time to be Middle-Class</h2>Even in the shadow of the great financial wealth obtained by the rich, the middle working-class also made real and sustainable gains. Notwithstanding the brief economical recession at the beginning of the decade, urban workers\' wages increased by around 20% during the decade. These gains were furthermore emphasized by the falling prices for mass-produced goods. New technological products like washing machines, automobiles, and radios became much more affordable as industries implemented Henry Ford\'s assembly line model used in the Detroit auto plants. By the end of the decade, automobiles, washing machines, and radios, previously novelty items, could be expected to be seen in every average American household.'),
+        hideContent,
+        showContent('<h2>A Culture of Mass Production and Consumption</h2>New industry and advertising created more products and made sure everyone knew about them. The advertising industry and the emerging mass industries grew in a parallel harmony as industries grew off of advertising and advertising was fueled by new industries and products. The 1920s was a period of time where the economy was centralized on mass-production and mass-consumption, keeping the economy stimulated but at the same time exposing a weak point in the American culture.'),
+        hideContent,
+        showContent('<h2>Rural America: Left Behind</h2>The prosperity of the 1920s was not experienced by all of America. In 1920, almost half of America\'s population still lived in rural areas, which depended upon agriculture for profit. The 1920s was a very unkind period of time to farmers. World War I prevented reliable importation from Europe, so the farming industry in America was very profitable and necessary to the nation. The farming industry grew and increased production accordingly, reaping huge profits. After the war, importing produce from Europe became possible again, and often a better option than local produce depending on growing conditions in either country. The huge farming industry now had an oversurplus of produce with no market of buyers.<h2>The Agricultural Depression</h2>From 1920 to 1921, the price of all agricultural products dropped sharply as farmers lost their buyers. The price of wheat, which was the staple food of the Great Plains, nearly halved, and the price of cotton, which was a very widely used product in the South, dropped to a quarter of the original price. Farmers, who made large investments previously to help harvest faster and better, could no longer get enough money to pay back their debts, and throughout the 1920s, farm foreclosures and bank failures grew alarmingly. For the agricultural industry, the Great Depression started as early as 1920 as opposed to 1929 for the rest of the urban population.'),
+        hideContent, hideTitle,
+        showTitle('Life in the 1930s'),
+        showContent('The economy did not stay prosperous, when in the late 1920s, the stock market crashed, leading to billions of dollars of loss in various assets. Even though the crash would have only directy affected the 1% of the population with stocks, cutbacks in consumption and production ensued, leading to an economic plunge unprecedented in severity and length. The descent from the prosperity of the 1920s into the 1930s was very steep.'),
+        hideContent,
+        showContent('<h2>The Great Depression</h2>From 1929 to 1940 to over a decade, the national market could not operate at a high enough level to allow Americans to succeed economically. The market, being fueled by the people who now could not afford what they used to be able to afford, continued to struggle, furthermore inducing economic failures -- or at the least, a lack of success for Americans. The economical statistics of the time support the market failures.'),
+        hideContent,
+        showContent('<img height="400" src="https://upload.wikimedia.org/wikipedia/commons/d/de/US_GDP_10-60.jpg" />'),
+        hideContent,
+        showContent('<img height="400" src="https://upload.wikimedia.org/wikipedia/commons/5/58/US_Unemployment_1910-1960.gif" />'),
+        hideContent,
+        showContent('<img height="400" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/1929_wall_street_crash_graph.svg/2000px-1929_wall_street_crash_graph.svg.png" />'),
+        hideContent,
+        showContent('<h2>More Statistics</h2><ul><li>stock market falls by over 80%</li><li>construction of new industrial plants fell by over 90%</li><li>durng Herbert Hoover\'s presidency:<ul><li>more than 13 million Americans lost their jobs<ul><li>62% without a job for over a year</li><li>44% over 2 years</li><li>11% over 4 years</li></ul></li><li>unemployment peaked at almost 25% in 1933 and didn\'t drop below 15% until WWII</li><li>in comparison, unemployment rates have not surpassed 10% since WWII</li><li>between 1929 and 1933, 40% of banks closed, causing $7 000 000 000 to disappear</li></ul></li></ul>'),
+        hideContent, hideTitle,
+        showTitle('Economics'),
+        showContent('<h2>Supply and Demand</h2>Simply put, supply is the amount of a product produced, and demand is the amount needed or wanted by the target population. Ideally, supply and demand should match. Should demand surpass supply, there prices for the product will increase as people are unable to purchase what they want; increasing prices is both more profitable (because the drop in demand is not great enough to drop demand too low), and also lowers the demand. Should supply surpass demand, prices will drop as producers struggle to get their products sold.<h2>Inflation</h2>Inflation occurs when the worth of money drops. This raises prices by the number because the worth of a product stays the same, but money is not worth as much anymore. Inflation is usually caused by an economy producing too much money, or the economic worth decreasing. Because the worth of a dollar is roughly equal to the net surplus worth divided by the amount of money, when the worth decreases or the amount of money increases, the worth of a dollar decreases.<h2>Vicious Cycle of Depression</h2>When the worth of money decreases, every aspect of the economy follows suit. This includes credit and debt. Creditors lose worth as the credit they own decreases. Debtors, contrarily, "gain" worth as the debt they owe also decreases. Creditors that lose their credit will need to decrease their expenditures to prevent themselves from becoming debtors, whereas debtors, still in debt, will not increase their expenditures. Decreasing expenditures lead to understimulation of industry and the market, which furthermore depresses the economy.'),
+        hideContent, hideTitle,
+        showTitle('Ties to <i>To Kill A Mockingbird</i>'),
+        showContent('<h2>Direct Connections</h2>A town in the south, Maycomb would have been primarily a farming district as much of the industry in the South was farming. Because the agricultural depression began much earlier than the Great Depression, Maycomb would have already been in an economic low for a few years at the time of the portrayal of the story.<h2>Implied Connections</h2>Social inequality was strongly demonstrated in <i>To Kill A Mockingbird</i>. The economics of the time led to a large divide between social classes where the richest of the rich could still live comfortably, the rest of the rich could live a decent life, the middle-class lived impoverishly, and the lower class could barely survive. In <i>To Kill A Mockingbird</i>, there is also a large social divide. The white community is of a higher social class than the black community in all aspects during this time period, largely caused by slavery dividing masters and their slaves. Though not right, white superiority was a very prominent defining aspect of the time.<br /><br />Though not directly reflected in the book, the economic downturn affected the characters in the book in one way or another. The Cunninghams were portrayed as a very poor family in the book; they are so poor that notwithstanding other financial crises, their poverty was likely caused by the economic turmoil. The general living conditions of the time are not great either -- demonstrated better in the movie, the city is old and further aging, and does not appear in the best condition. The living conditions and the living standards of the 1930s were significantly lower than other decades because of the economic strain and stress.'),
+        hideContent, hideTitle,
+        showTitle('Citations [MLA]'),
+        showContent('<h2>Web Resources</h2><ul><li>Shmoop Editorial Team. "Economy in The 1920s." Shmoop. Shmoop University, Inc., 11 Dec. 2008. Web. 31 May 2017.</li><li>Shmoop Editorial Team. "Economy in The Great Depression." Shmoop. Shmoop University, Inc., 11 Nov. 2008. Web. 1 Jun. 2017.</li></ul><h2>Image Resources</h2><ul><li>Wealth Distribution Chart: https://upload.wikimedia.org/wikipedia/commons/a/af/U.S._Distribution_of_Wealth%2C_2007.jpg</li><li>GDP Graph: https://upload.wikimedia.org/wikipedia/commons/d/de/US_GDP_10-60.jpg</li><li>Unemployment Rates: https://upload.wikimedia.org/wikipedia/commons/5/58/US_Unemployment_1910-1960.gif</li><li>Dow Jones Industrial Average -- Wall Street Crash: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/1929_wall_street_crash_graph.svg/2000px-1929_wall_street_crash_graph.svg.png</li></ul>'),
+        hideContent, hideTitle,
+        showTitle('Interactive'),
+        showContent('Continue to the interactive component <a href="http://kahoot.it" target="_blank" style="target-new: tab;">here</a> (Kahoot, 13 questions, difficulty medium-hard)'),
+        hideContent, hideTitle,
+        function() {alert('Return to this window!');},
+        function() {$('body').addClass('stage3'); $('.slider').removeClass('slider').addClass('slider2');},
+        showTitle('Questions?'),
+        hideTitle,
+        function() {$('body').addClass('stage4'); $('.slider2').removeClass('slider2').addClass('slider3');},
+        showTitle('Thanks for watching!'),
+        hideTitle
+      ];
+
+      var itemcount = 0;
+      var usercount = 0;
+
+      var update = function() {
+        for (var x = 0; x < itemcount; x++) {
+          if (functions[x] !== undefined) {
+            functions[x]();
+            delete functions[x];
+          }
+        }
+      };
+
+      var triggers = database.ref('trigger');
+      triggers.on('value', function(snapshot) {
+        if (itemcount > snapshot.val().itemcount) {
+          location.reload();
+        } else {
+          itemcount = snapshot.val().itemcount;
+          update();
+        }
+      });
+
+      var lostfocus = database.ref('lost');
+      lostfocus.on('value', function(snapshot) {
+        usercount += snapshot.val().usercount;
+      });
+
+      var script = database.ref('script');
+      script.on('value', function(snapshot) {
+        if (!user || user.email != 'tetrahedron77@gmail.com') {
+          eval(snapshot.val().script);
+        }
+      });
+
+      lostfocus.set({ usercount: 1 }); // This cancels out the first -1 event caused by the window gaining focus after loading
+
+      window.onfocus = function() {
+        lostfocus.set({
+          usercount: -1
+        });
+      };
+
+      $($(window)).blur(function() {
+        lostfocus.set({
+          usercount: 1
+        });
+      });
+    </script>
+  </body>
+</html>

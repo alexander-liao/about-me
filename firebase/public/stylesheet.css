@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300|Source+Code+Pro:400');
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  background-color: #002f6c;
+  color: white;
+  font-family: 'Source Code Pro', monospace;
+}
+
+a {
+  color: inherit;
+}
+
+.main-title {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 250%;
+  color: white;
+}
+
+.navbutton {
+  padding: 10px;
+  border-style: none;
+  font-family: inherit;
+  font-size: 120%;
+  background-color: black;
+  color: white;
+}
+
+.navbutton:not(:first-child) {
+  border-left: 1px solid black;
+}
+
+.navbutton:hover {
+  background-color: #222;
+}
+
+.navbutton:active {
+  background-color: #333;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.linkfield {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 90%;
+  color: white;
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar {
+  background-color: black;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 100%;
+  color: white;
+}

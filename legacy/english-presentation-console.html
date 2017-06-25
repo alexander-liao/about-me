@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>English Presentation | Server</title>
+    <link href="/servercss.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <h3>Press SPACE to advance to the next stage<br />Press ENTER to reset to the initial stage<br />Press DOWN_ARROW to type in a script which will be executed by all listener instances.<br />Press UP_ARROW to forcefully reset the number of users with lost-focus to 0</h3>
+    <h4 id="unfocus">0 users are currently unfocused</h4>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      // TODO: Replace with your project's customized code snippet
+      var config = {
+        apiKey: "AIzaSyB3BMWmAPtRsxzMzBPT94sngVb6R8uYGlc",
+        authDomain: "hyper-neutrino.firebaseapp.com",
+        databaseURL: "https://hyper-neutrino.firebaseio.com",
+        projectId: "hyper-neutrino",
+        storageBucket: "hyper-neutrino.appspot.com",
+        messagingSenderId: "645211605426"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+
+      var itemcount = 0;
+      var usercount = 0;
+
+      var triggers = database.ref('trigger');
+      triggers.on('value', function(snapshot) {
+        itemcount = snapshot.val().itemcount;
+      });
+
+      var lostfocus = database.ref('lost');
+      lostfocus.on('value', function(snapshot) {
+        document.getElementById('unfocus').innerHTML = (usercount += snapshot.val().usercount) + ' user' + (usercount != 1 ? 's are' : ' is') + ' currently unfocused';
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.keyCode == 32) {
+          database.ref('trigger').set({
+           itemcount: ++itemcount
+          });
+        } else if (event.keyCode == 13) {
+          database.ref('trigger').set({
+            itemcount: itemcount = 0
+          });
+        } else if (event.keyCode == 40) {
+          database.ref('script').set({
+            script: prompt()
+          });
+        } else if (event.keyCode == 38) {
+          database.ref('lost').set({
+            usercount: -usercount
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+@keyframes animate1 {
+  from {background-color: #000; color: #fff}
+  to {background-color: #09f; color: #09f}
+}
+
+.stage1 {
+  animation-name: animate1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate2 {
+  from {background-color: #09f; color: #09f}
+  to {background-color: #09f; color: #222}
+}
+
+.stage2 {
+  animation-name: animate2;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate3 {
+  from {background-color: #09f; color: #222}
+  to {background-color: #f90; color: #222}
+}
+
+.stage3 {
+  animation-name: animate3;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate4 {
+  from {background-color: #f90; color: #222}
+  to: {background-color: #000; color: #ddd}
+}
+
+.stage4 {
+  animation-name: animate4;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.fullslider {
+  position: fixed;
+  z-index: 100;
+  background-color: #06d;
+  transition: transform 1s;
+}
+
+#a {
+  margin-left: 20px;
+}
+
+.slider {
+  position: fixed;
+  z-index: 200;
+  background-color: #04a;
+  transition: transform 1s;
+}
+
+.slider2 {
+  position: fixed;
+  z-index: 200;
+  background-color: #f90;
+  transition: transform 1s;
+}
+
+.slider3 {
+  position: fixed;
+  z-index: 200;
+  background-color: #000;
+  transition: transform 1s;
+}
+
+.slide-down {
+  vertical-align: middle;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.inactive {
+  top: 0;
+  left: 0;
+  transform: translateY(-500px);
+}
+
+.fullinactive {
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}
+
+.active {
+  transform: translateY(0);
+}

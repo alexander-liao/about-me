@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>English Presentation | Server</title>
+    <link href="servercss.css?version=2" rel="stylesheet">
+  </head>
+
+  <body style="font-family: monospace;">
+    Email Address: <input style="font-family: monospace;" type="text" id="addr" placeholder="Email Address" /><br /><br />
+    Password: <input style="font-family: monospace;" type="password" id="pass" placeholder="Password" /><br /><br />
+    <button onclick="signin()">Sign In!</button>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      // TODO: Replace with your project's customized code snippet
+      var config = {
+        apiKey: "AIzaSyB3BMWmAPtRsxzMzBPT94sngVb6R8uYGlc",
+        authDomain: "hyper-neutrino.firebaseapp.com",
+        databaseURL: "https://hyper-neutrino.firebaseio.com",
+        projectId: "hyper-neutrino",
+        storageBucket: "hyper-neutrino.appspot.com",
+        messagingSenderId: "645211605426"
+      };
+      firebase.initializeApp(config);
+
+      var signin = function() {
+        var addr = document.getElementById('addr').value;
+        var pass = document.getElementById('pass').value;
+        firebase.auth().signInWithEmailAndPassword(addr, pass).catch(function(error) {
+          var code = error.code;
+          if (code == 'auth/invalid-email') {
+            alert('Invalid Email!');
+          } else if (code == 'auth/user-disabled') {
+            alert('User Disabled!');
+          } else if (code == 'auth/user-not-found') {
+            alert('User Not Found');
+          } else if (code == 'auth/wrong-password') {
+            alert('Wrong Password');
+          }
+        });
+      };
+
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user && user.email == 'tetrahedron77@gmail.com') {
+          window.open('/english-presentation-console.html', '_self');
+        }
+      });
+    </script>
+  </body>
+</html>
