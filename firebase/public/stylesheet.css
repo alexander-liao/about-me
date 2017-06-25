@@ -21,6 +21,7 @@ a {
 }
 
 .navbutton {
+  text-decoration: none;
   padding: 10px;
   border-style: none;
   font-family: inherit;
