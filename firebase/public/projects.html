@@ -8,13 +8,13 @@
   </head>
 
   <body>
-    <h1 class="main-title">Alexander Liao</h1>
-    <div class="navbar"><a class="navbutton" href="index.html">Home</a><a class="navbutton" href="about-me.html">About me</a><a class="navcurr" href="projects.html">Projects</a><a class="navbutton" href="contact.html">Contact</a></div>
+    <header class="main-title">Alexander Liao</header>
+    <nav class="navbar"><a class="navbutton" href="index.html">Home</a><a class="navbutton" href="about-me.html">About me</a><a class="navcurr" href="projects.html">Projects</a><a class="navbutton" href="contact.html">Contact</a></nav>
     <div class="content">
       <p class="bio textbox">A collection of my most notable programming projects</p>
       <h2 class="subheader">Programming Languages</h2>
       <div class="block">
-        <p>I have made several programming languages, two of which are notable. They are both designed for golfing; that is, writing short programs to perform a given task. They are PostL (post-fix notation based) and Anyfix (any-fix notation based, which is one of my own concepts).</p>
+        <p>I have made several programming languages, two of which are particularly notable. They are both designed for golfing; that is, writing short programs to perform a given task. They are PostL (post-fix notation based) and Anyfix (any-fix notation based, which is one of my own concepts).</p>
         <ul class="align-left-list">
           <li>PostL <a href="https://github.com/James--Smith/postl">(Github)</a><ul>
             <li>Postfix Notation</li>
@@ -26,6 +26,38 @@
             <li>Stores instructions that require more parameters than are currently present until there are enough parameters</li>
             <li>Designed for golfing</li>
             <li>Less intuitive syntax and structure but much more flexible</li>
+          </ul></li>
+          <li>BrainF**k Extensions <a href="https://github.com/alexander-liao/extending-brainfuck">(Github)</a><ul>
+            <li>BrainF**k 1: The Original BF with 8 commands</li>
+            <li>BrainF**k 2: Adds repetition to avoid needing the same command repeated over and over. Supports comments</li>
+            <li>BrainF**k 3: Adds built-ins to do common tasks like read all input</li>
+            <li>BrainF**k 4: Adds function syntax to define functions</li>
+            <li>Overall: Each program in a BF version can be converted into a valid program in a lower BF version, allowing everything to eventually reduce down to original BF code. This makes coding in BF a lot simpler and more intuitive</li>
+          </ul></li>
+          <li>Billiards Ball Machine <a href="https://github.com/alexander-liao/java-public/tree/master/programs/ball-simulator">(Github)</a><ul>
+            <li>Esolang; designed for fun and not practicality</li>
+            <li>Mostly intuitive command structure with values represented as "billiard balls" moving through a ball machine</li>
+          </ul></li>
+          <li>KeyScript <a href="https://github.com/alexander-liao/keyscript">(Github)</a><ul>
+            <li>A scripting language designed for interacting with Keyboard Events</li>
+            <li>Mockup version of something similar to AutoHotKey</li>
+            <li>Easy to use and intuitive syntax</li>
+          </ul></li>
+        </ul>
+      </div>
+      <h2 class="subheader">Other Notable Programs</h2>
+      <div class="block">
+        <ul class="align-left-list">
+          <li>Implode an ASCII-art box <a href="https://codegolf.stackexchange.com/a/123059/68942">(StackExchange)</a><ul>
+            <li>Takes an ASCII-art box as input</li>
+            <li>Moves all of the edges in to make a cool ASCII-art output</li>
+            <li>Made for a programming challenge to make the shortest program</li>
+          </ul></li>
+          <li>Name an acyclic hydrocarbon <a href="https://codegolf.stackexchange.com/a/125372/68942">(StackExchange)</a><ul>
+            <li>Takes an ASCII-art representation of an acyclic hydrocarbon</li>
+            <li>Outputs its proper IUPAC name</li>
+            <li>Made for a programming challenge to make the shortest program, but turned out to be very difficult even without considering that</li>
+          </ul></li>
         </ul>
       </div>
     </div>

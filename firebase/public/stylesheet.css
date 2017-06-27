@@ -8,23 +8,11 @@ body {
   background-color: #354851;
   color: white;
   font-family: 'Open Sans', monospace;
+  overflow: hidden;
 }
 
 a {
   color: inherit;
-}
-
-.main-title {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1em;
-  padding-right: 1em;
-  text-align: center;
-  font-family: 'Source Code Pro', monospace;
-  font-weight: 300;
-  letter-spacing: -1px;
-  font-size: 250%;
-  color: white;
 }
 
 .navcurr {
@@ -80,27 +68,13 @@ button:focus {
 .bio {
   width: 75%;
   font-size: 100%;
+  padding-left: auto;
+  padding-right: auto;
 }
 
 .linkfield {
   width: 90%;
   font-size: 90%;
-}
-
-.content {
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 100%;
-}
-
-.navbar {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  background-color: rgba(0,0,0,0.45);
-  font-family: 'Open Sans', monospace;
-  font-size: 100%;
-  color: black;
 }
 
 .subheader {
@@ -141,4 +115,46 @@ ul li li:before {
 a:not(.navbutton) {
   text-decoration: none;
   box-shadow: inset 0 0px 0 white, inset 0 -1px 0 white;
+}
+
+.banner, .navbar, .main-title {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.main-title {
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 300;
+  letter-spacing: -1px;
+  font-size: 250%;
+  color: white;
+  background-color: #202e35;
+}
+
+.navbar {
+  margin-top: 6em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: #202e35;
+  font-family: 'Open Sans', monospace;
+  font-size: 100%;
+  color: black;
+}
+
+.content {
+  position: absolute;
+  overflow: auto;
+  top: 9em;
+  height: calc(100% - 9em);
+  width: 100%;
 }
