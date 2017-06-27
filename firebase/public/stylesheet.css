@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300|Source+Code+Pro:400');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300|Open+Sans:300|Cutive+Mono:400');
 
 body {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
-  background-color: #002f6c;
+  background-color: #354851;
   color: white;
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Open Sans', monospace;
 }
 
 a {
@@ -15,7 +15,12 @@ a {
 }
 
 .main-title {
-  font-family: 'Roboto Mono', monospace;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 300;
+  letter-spacing: -1px;
   font-size: 250%;
   color: white;
 }
@@ -27,40 +32,92 @@ a {
   border-style: none;
   font-family: inherit;
   font-size: 120%;
-  background-color: black;
+  background-color: rgba(0,0,0,0);
   color: white;
 }
 
 .navbutton:not(:first-child) {
-  border-left: 1px solid black;
+  border-left: 1px solid rgba(0,0,0,0);
 }
 
 .navbutton:hover {
-  background-color: #222;
+  background-color: rgba(255,255,255,0.2);
 }
 
 .navbutton:active {
-  background-color: #333;
+  background-color: rgba(255,255,255,0.3);
 }
 
 button:focus {
   outline: 0;
 }
 
+.textbox {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFFFFCC;
+  padding: 0.8em 1.6em;
+}
+
+.bio {
+  width: 75%;
+  font-size: 100%;
+}
+
 .linkfield {
-  font-family: 'Source Code Pro', monospace;
+  width: 90%;
   font-size: 90%;
-  color: white;
 }
 
 .content {
   padding-left: 10px;
   padding-right: 10px;
+  height: 100%;
 }
 
 .navbar {
-  background-color: black;
-  font-family: 'Source Code Pro', monospace;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: rgba(0,0,0,0.45);
+  font-family: 'Open Sans', monospace;
   font-size: 100%;
+  color: black;
+}
+
+.subheader {
+  padding-left: 1em;
+  font-family: 'Cutive Mono', monospace;
   color: white;
+}
+
+.block {
+  padding-left: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+ul.align-left-list {
+  padding-left: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li {
+  font-size: 125%;
+}
+
+ul li li {
+  font-size: 80%;
+}
+
+ul li li:before {
+  content: "\0BB \020";
 }
