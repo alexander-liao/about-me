@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300|Open+Sans:300|Cutive+Mono:400');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300|Open+Sans:300');
 
 body {
   margin-top: 0px;
@@ -17,11 +17,24 @@ a {
 .main-title {
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
   text-align: center;
   font-family: 'Source Code Pro', monospace;
   font-weight: 300;
   letter-spacing: -1px;
   font-size: 250%;
+  color: white;
+}
+
+.navcurr {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  border-style: none;
+  font-family: inherit;
+  font-size: 120%;
+  background-color: rgba(255,255,255,0.1);
   color: white;
 }
 
@@ -92,7 +105,8 @@ button:focus {
 
 .subheader {
   padding-left: 1em;
-  font-family: 'Cutive Mono', monospace;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
   color: white;
 }
 
