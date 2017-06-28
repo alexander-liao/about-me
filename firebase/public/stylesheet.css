@@ -15,18 +15,7 @@ a {
   color: inherit;
 }
 
-.navcurr {
-  text-decoration: none;
-  display: inline-block;
-  padding: 10px;
-  border-style: none;
-  font-family: inherit;
-  font-size: 120%;
-  background-color: rgba(0,0,0,0);
-  color: white;
-}
-
-.navbutton {
+.navbutton, .navcurr {
   text-decoration: none;
   display: inline-block;
   padding: 10px;
